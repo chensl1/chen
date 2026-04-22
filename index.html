@@ -55,6 +55,42 @@
                 transform: translateY(0);
             }
         }
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-animate.left {
+            transform: translateX(-50px);
+        }
+        .scroll-animate.right {
+            transform: translateX(50px);
+        }
+        .scroll-animate.scale {
+            transform: scale(0.8);
+        }
+        .scroll-animate.active {
+            opacity: 1;
+            transform: translateY(0) translateX(0) scale(1);
+        }
         .dropdown:hover .dropdown-content {
             opacity: 1;
             visibility: visible;
@@ -172,7 +208,7 @@
     <div class="container mx-auto px-4 md:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <!-- 左侧图片 -->
-            <div class="relative">
+            <div class="relative scroll-animate left">
                 <img src="image/tu5.png" class="w-full h-80 md:h-96 object-cover rounded-lg" alt="品牌故事">
                 <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary rounded-full flex items-center justify-center">
                     <span class="text-white text-center text-sm font-bold">25+<br>年赛事经验</span>
@@ -180,7 +216,7 @@
             </div>
             
             <!-- 右侧文字 -->
-            <div>
+            <div class="scroll-animate right">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6">赛道基因，冠军传承</h2>
                 <p class="text-gray text-lg mb-6 leading-relaxed">
                     RAIDER 源自世界顶级摩托车赛事的技术积淀。我们与 MotoGP 和 WSBK 顶级车队深度合作，
@@ -217,26 +253,26 @@
 <!-- 产品分类 -->
 <section id="category" class="py-16 bg-secondary">
     <div class="container mx-auto px-4 md:px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-3">产品分类</h2>
-        <p class="text-gray mb-12">四大系列，满足全场景骑行需求</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3 scroll-animate">产品分类</h2>
+        <p class="text-gray mb-12 scroll-animate">四大系列，满足全场景骑行需求</p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div class="bg-dark p-6 rounded-lg product-card cursor-pointer">
+            <div class="bg-dark p-6 rounded-lg product-card cursor-pointer scroll-animate">
                 <i class="fa fa-flag-checkered text-3xl text-primary mb-3"></i>
                 <h3 class="text-xl font-semibold">赛道竞技系列</h3>
                 <p class="text-gray text-sm mt-2">MotoGP专业级</p>
             </div>
-            <div class="bg-dark p-6 rounded-lg product-card cursor-pointer">
+            <div class="bg-dark p-6 rounded-lg product-card cursor-pointer scroll-animate" style="transition-delay: 0.1s;">
                 <i class="fa fa-road text-3xl text-primary mb-3"></i>
                 <h3 class="text-xl font-semibold">街道通勤系列</h3>
                 <p class="text-gray text-sm mt-2">日常舒适防护</p>
             </div>
-            <div class="bg-dark p-6 rounded-lg product-card cursor-pointer">
+            <div class="bg-dark p-6 rounded-lg product-card cursor-pointer scroll-animate" style="transition-delay: 0.2s;">
                 <i class="fa fa-compass text-3xl text-primary mb-3"></i>
                 <h3 class="text-xl font-semibold">拉力探险系列</h3>
                 <p class="text-gray text-sm mt-2">全地形适配</p>
             </div>
-            <div class="bg-dark p-6 rounded-lg product-card cursor-pointer">
+            <div class="bg-dark p-6 rounded-lg product-card cursor-pointer scroll-animate" style="transition-delay: 0.3s;">
                 <i class="fa fa-hourglass text-3xl text-primary mb-3"></i>
                 <h3 class="text-xl font-semibold">复古巡航系列</h3>
                 <p class="text-gray text-sm mt-2">经典造型</p>
@@ -249,13 +285,13 @@
 <section id="products" class="py-20">
     <div class="container mx-auto px-4 md:px-6">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-3">产品阵容</h2>
-            <p class="text-gray">官方正品 | 现货速发 | 全国联保</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-3 scroll-animate">产品阵容</h2>
+            <p class="text-gray scroll-animate">官方正品 | 现货速发 | 全国联保</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <!-- 产品1 -->
-            <div class="bg-secondary rounded-lg overflow-hidden product-card">
+            <div class="bg-secondary rounded-lg overflow-hidden product-card scroll-animate">
                 <div class="relative">
                     <img src="image/banner2.png" class="w-full h-64 object-cover">
                     <span class="absolute top-2 left-2 bg-primary text-white px-2 py-1 text-xs">热销</span>
@@ -270,7 +306,7 @@
             </div>
 
             <!-- 产品2 -->
-            <div class="bg-secondary rounded-lg overflow-hidden product-card">
+            <div class="bg-secondary rounded-lg overflow-hidden product-card scroll-animate" style="transition-delay: 0.1s;">
                 <div class="relative">
                     <img src="image/tupian1.png" class="w-full h-64 object-cover">
                 </div>
@@ -284,7 +320,7 @@
             </div>
 
             <!-- 产品3 -->
-            <div class="bg-secondary rounded-lg overflow-hidden product-card">
+            <div class="bg-secondary rounded-lg overflow-hidden product-card scroll-animate" style="transition-delay: 0.2s;">
                 <div class="relative">
                     <img src="image/tu2.png" class="w-full h-64 object-cover">
                     <span class="absolute top-2 left-2 bg-primary text-white px-2 py-1 text-xs">新品</span>
@@ -299,7 +335,7 @@
             </div>
 
             <!-- 产品4 -->
-            <div class="bg-secondary rounded-lg overflow-hidden product-card">
+            <div class="bg-secondary rounded-lg overflow-hidden product-card scroll-animate" style="transition-delay: 0.3s;">
                 <div class="relative">
                     <img src="image/tu4.png" class="w-full h-64 object-cover">
                 </div>
@@ -318,26 +354,26 @@
 <!-- 核心技术 -->
 <section id="technology" class="py-20 bg-secondary">
     <div class="container mx-auto px-4 md:px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-3">核心防护技术</h2>
-        <p class="text-gray mb-12">源自赛事科技，守护每一次骑行</p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-3 scroll-animate">核心防护技术</h2>
+        <p class="text-gray mb-12 scroll-animate">源自赛事科技，守护每一次骑行</p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div class="p-6 bg-dark rounded-lg">
+            <div class="p-6 bg-dark rounded-lg scroll-animate">
                 <i class="fa fa-shield text-3xl text-primary mb-4"></i>
                 <h3 class="text-xl font-bold mb-2">碳纤维外壳</h3>
                 <p class="text-gray">航空级材质，抗冲击提升300%</p>
             </div>
-            <div class="p-6 bg-dark rounded-lg">
+            <div class="p-6 bg-dark rounded-lg scroll-animate" style="transition-delay: 0.1s;">
                 <i class="fa fa-microchip text-3xl text-primary mb-4"></i>
                 <h3 class="text-xl font-bold mb-2">多密度EPS</h3>
                 <p class="text-gray">4层缓冲，全方位吸收冲击力</p>
             </div>
-            <div class="p-6 bg-dark rounded-lg">
+            <div class="p-6 bg-dark rounded-lg scroll-animate" style="transition-delay: 0.2s;">
                 <i class="fa fa-refresh text-3xl text-primary mb-4"></i>
                 <h3 class="text-xl font-bold mb-2">智能通风</h3>
                 <p class="text-gray">风洞测试，极速散热不闷热</p>
             </div>
-            <div class="p-6 bg-dark rounded-lg">
+            <div class="p-6 bg-dark rounded-lg scroll-animate" style="transition-delay: 0.3s;">
                 <i class="fa fa-check-circle text-3xl text-primary mb-4"></i>
                 <h3 class="text-xl font-bold mb-2">权威认证</h3>
                 <p class="text-gray">ECE 22.06 / 3C 双认证</p>
@@ -352,12 +388,12 @@
     <div class="absolute inset-0 bg-black/70"></div>
     <div class="container mx-auto px-4 md:px-6 relative z-10">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-3">私人头盔定制</h2>
-            <p class="text-gray">打造专属于你的个性头盔</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-3 scroll-animate">私人头盔定制</h2>
+            <p class="text-gray scroll-animate">打造专属于你的个性头盔</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-dark p-8 rounded-lg text-center">
+            <div class="bg-dark p-8 rounded-lg text-center scroll-animate">
                 <i class="fa fa-paint-brush text-4xl text-primary mb-4"></i>
                 <h3 class="text-xl font-bold mb-3">外观定制</h3>
                 <p class="text-gray mb-4">自定义配色方案、图案设计、贴花装饰</p>
@@ -367,7 +403,7 @@
                     <li>• 签名定制</li>
                 </ul>
             </div>
-            <div class="bg-dark p-8 rounded-lg text-center">
+            <div class="bg-dark p-8 rounded-lg text-center scroll-animate" style="transition-delay: 0.15s;">
                 <i class="fa fa-cog text-4xl text-primary mb-4"></i>
                 <h3 class="text-xl font-bold mb-3">性能定制</h3>
                 <p class="text-gray mb-4">根据骑行风格定制头盔内部结构</p>
@@ -377,7 +413,7 @@
                     <li>• 镜片选择</li>
                 </ul>
             </div>
-            <div class="bg-dark p-8 rounded-lg text-center">
+            <div class="bg-dark p-8 rounded-lg text-center scroll-animate" style="transition-delay: 0.3s;">
                 <i class="fa fa-user text-4xl text-primary mb-4"></i>
                 <h3 class="text-xl font-bold mb-3">尺寸定制</h3>
                 <p class="text-gray mb-4">精确测量，打造完美贴合的佩戴体验</p>
@@ -390,7 +426,7 @@
         </div>
 
         <div class="text-center mt-12">
-            <button class="btn-primary text-lg px-8 py-3">开始定制</button>
+            <button class="btn-primary text-lg px-8 py-3 scroll-animate" style="transition-delay: 0.45s;">开始定制</button>
         </div>
     </div>
 </section>
@@ -523,6 +559,29 @@
             mobileMenu.classList.add('hidden');
         });
     });
+
+    // 滚动触发动画
+    function initScrollAnimation() {
+        const animateElements = document.querySelectorAll('.scroll-animate');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', initScrollAnimation);
 </script>
 </body>
 </html>
